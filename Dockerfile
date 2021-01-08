@@ -1,9 +1,8 @@
 FROM composer:2
 
 ENV PATH=$COMPOSER_HOME/vendor/bin:$PATH
-ENV DRUSH_VERSION_REQUIREMENT='^10.0'
 
-RUN composer global require drush/drush:$DRUSH_VERSION_REQUIREMENT
+RUN composer global require drush/drush:^10.0
 
 COPY ./drush /app/drush
 
