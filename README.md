@@ -9,7 +9,7 @@ Usage:
 ```
 docker run --rm \
     -v $PWD/composer.json:/app/composer.json \
-    -v $PWD/compsoer.lock:/app/composer.lock \
+    -v $PWD/composer.lock:/app/composer.lock \
     lpeabody/drupal-security
 ```
 
@@ -24,6 +24,6 @@ Usage:
 ```
 docker run --rm \
     -v $PWD/composer.json:/app/composer.json \
-    -v $PWD/compsoer.lock:/app/composer.lock \
+    -v $PWD/composer.lock:/app/composer.lock \
     lpeabody/drupal-security drush pm:security --allowed=drupal/group:1.0.0-rc5
 ```
