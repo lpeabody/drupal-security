@@ -1,0 +1,4 @@
+drush:
+  paths:
+    include:
+      - /app/drush/Commands
