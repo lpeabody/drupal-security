@@ -1,6 +1,6 @@
 
 build:
-	docker build -t lpeabody/drupal-security .
+	docker build --pull -t lpeabody/drupal-security:latest .
 
-test:
-	
+push:
+	docker push lpeabody/drupal-security:latest

@@ -23,10 +23,7 @@ jobs:
           ls -lha $BUILD_CONTEXT
           echo $PWD
           ls -lha
-      - uses: docker/build-push-action@v2
-        with:
-          context: ${{ github.workspace }}
-          file: ${{ github.workspace }}/Dockerfile
-          pull: true
-          tags: |
-            lpeabody/drupal-security:latest
+      - name: Build image
+        run: make
+      - name: Push image
+        run: make push
