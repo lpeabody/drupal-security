@@ -27,5 +27,6 @@ jobs:
         with:
           context: ${{ github.workspace }}
           file: ${{ github.workspace }}/Dockerfile
+          pull: true
           tags: |
             lpeabody/drupal-security:latest
