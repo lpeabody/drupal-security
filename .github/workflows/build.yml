@@ -22,8 +22,9 @@ jobs:
           echo $BUILD_CONTEXT
           ls -lha $BUILD_CONTEXT
           echo $PWD
-          ls -lha $PWD
+          ls -lha
       - uses: docker/build-push-action@v2
         with:
+          context: ${{ github.workspace }}
           tags: |
             lpeabody/drupal-security:latest
