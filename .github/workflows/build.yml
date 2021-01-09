@@ -14,8 +14,17 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Debug output
+        env:
+          BUILD_CONTEXT: ${{ github.workspace }}
+        run: |
+          set -v
+          echo $BUILD_CONTEXT
+          ls -lha $BUILD_CONTEXT
+          echo $PWD
+          ls -lha $PWD
       - uses: docker/build-push-action@v2
         with:
-          context: ${{ github.workspace }}
+          context: ${{ github.workspace }}/drush
           tags: |
             lpeabody/drupal-security:latest
