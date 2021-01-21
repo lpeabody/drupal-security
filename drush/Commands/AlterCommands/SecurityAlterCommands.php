@@ -21,8 +21,8 @@ class SecurityAlterCommands extends DrushCommands {
    * @hook alter pm:security
    * @usage drush pm:security --allowed='my/package:1.0.0,other/package:3.0.0-rc1'
    */
-  public function alterSecurityCommand(CommandResult $result, CommandData $command_data) {
-    if (!empty($result)) {
+  public function alterSecurityCommand(CommandResult $result = NULL, CommandData $command_data = NULL) {
+    if (!empty($result) && !empty($command_data)) {
       $allowed = $command_data->input()->getOption('allowed');
       /** @var \Consolidation\OutputFormatters\StructuredData\RowsOfFields|null $output */
       $flagged_packages = $result->getOutputData();
